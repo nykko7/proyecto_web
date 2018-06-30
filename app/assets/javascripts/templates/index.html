@@ -1,0 +1,29 @@
+<header class="row">
+  <h1 class="text-center col-md-6 col-md-offset-3">Buscar Cursos</h1>
+</header>
+<section class="row">
+  <form>
+    <div class="form-group col-md-6 col-md-offset-3">
+      <label for="keywords" class="sr-only">Keywords</label>
+      <input ng-model="keywords" name="keywords" type="text" autofocus class="form-control" placeholder="Nombre del curso, por ejemplo Programación Básica">
+    </div>
+    <div class="form-group col-md-6 col-md-offset-3 text-center">
+      <button ng-click="search(keywords)" class="btn btn-primary btn-lg">Buscar</button>
+    </div>
+  </form>
+</section>
+<hr>
+<section class="row" ng-if="cursos">
+  <h1 class="text-center h2">Resultados</h1>
+  <ul class="list-unstyled">
+    <li ng-repeat="curso in cursos">
+      <section class="well col-md-6 col-md-offset-3">
+        <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">{{curso.nombre}}</a></h1>
+        <div class="col-md-6">
+          <button class="btn btn-info">Editar</button>
+          <button class="btn btn-danger">Eliminar</button>
+        </div>
+      </section>
+    </li>
+  </ul>
+</section>
